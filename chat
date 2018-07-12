@@ -1,0 +1,28 @@
+
+
+  var config = {
+    apiKey: "AIzaSyBa27gvCISh95m3XFf1vA4sYnOEVpJb8wg",
+    authDomain: "chat-ba37b.firebaseapp.com",
+    databaseURL: "https://chat-ba37b.firebaseio.com",
+    projectId: "chat-ba37b",
+    storageBucket: "chat-ba37b.appspot.com",
+    messagingSenderId: "151313050576"
+  };
+  firebase.initializeApp(config);
+  const database = firebase.database();
+
+  const mensajes = database.ref('mensajes');
+
+  mensajes.push({
+  	mensaje: "hola mundo cruel",
+  	privado: true,
+  	leido: false
+  },
+   function(error){
+   	if(error){
+   		console.log(error);
+   	}
+   	else{
+   		console.log('mensaje enviado');
+   	}
+   });
